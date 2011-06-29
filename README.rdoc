@@ -1,0 +1,21 @@
+= Hampster
+
+Simple process monitor - 
+ Used to check if a process is running - if it insn't execute some ruby code
+
+see ./bin/hampster --help for all the arguments that it takes
+
+= Example
+
+hampster --callback "%x{echo "Rails is Dead" | mail -s rails_is_dead me@ram9.cc}" --watch 'Rails:' --callback-message 'emailing you some fyi' --delay 1
+
+samples.  
+
+ Put this in a cronjob to run every minute and you have a very simple, robust way to detect missing jobs
+
+ This is not a replacement for more robust excellent froody things like Daemontools - but it is a simple way to
+ make sure a important background job is running in userland - without muking about with root
+
+= Fin
+
+Copyright (c) 2011 Curtis Schofield. See LICENSE for details.

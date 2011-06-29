@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby -rubygems
+$:.push File.join(File.dirname(__FILE__),'..','lib')
+require 'optparse'
+require 'hamster'
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: #{__FILE__} [options]"
+   opts.on( '-h', '--help', 'Display this screen' ) do
+     puts opts
+     exit
+   end
+
+  opts.on("--command shellcode",String, "shell code to execute if process missing") do |v|
+    options[:command] = v
+  end
+
+  opts.on("--callback rubycode",String, "ruby code to execute if process missing") do |v|
+    options[:callback] = lambda {  # may be evil
+                          eval(v)
+                        }
+  end
+  opts.on("--callback_message string",String, "message to write when callback fired") do |v|
+    options[:callback_message] = v
+  end
+
+  opts.on("--watch S",String, "process identifying string") do |v|
+    options[:watch] = v
+  end
+
+  opts.on("--num_cycles N", "total executions before exit") do |v|
+    options[:num_cycles] = v.to_i
+  end
+
+  opts.on("--delay F",Float, "delay between cycles") do |v|
+    options[:delay] = v
+  end
+
+end.parse!
+ProcessWatch.new(options).cycle
