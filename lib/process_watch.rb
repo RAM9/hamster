@@ -19,8 +19,9 @@ class ProcessWatch
   end
 
   class << self 
-    def find(watch_string)
-      cmd = %%ps x |grep '#{watch_string}' |grep -v grep | grep -v 'watch #{watch_string}' | awk '{print $1}'%
+    
+    def find(watch_string,ps_args = "")
+      cmd = %%ps -x#{ps_args} |grep '#{watch_string}' |grep -v grep | grep -v 'watch #{watch_string}' | awk '{print $1}'%
       pids = %x{#{cmd}}.split()
     end
   end
@@ -46,9 +47,9 @@ class ProcessWatch
   end
   def _fork
     Daemonize.call_as_daemon(lambda {
+      p ENV['PWD']
       Dir.chdir(ENV['PWD'])
-      ::Kernel.exec(self.command)
-      exit
+      ::Process.exec(self.command)
     },"hamster.daemon.log",self.command)
   end
 end
