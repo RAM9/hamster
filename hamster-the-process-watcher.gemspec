@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "bin/hamster",
     "bin/test_daemon",
+    "hamster-the-process-watcher.gemspec",
     "lib/hamster.rb",
     "lib/process_watch.rb",
     "test/helper.rb",
