@@ -5,7 +5,14 @@ class ProcessWatch
     :command,
     :callback,
     :callback_message
-
+  #
+  # #
+  # # example : run test_daemon - test_daemon runs forever
+  # #
+  # # don't forget to kill the test_daemon pid when you are done playing.
+  # #
+  # $ hamster --watch 'test_daemon ID=1' --command "test_daemon ID=1" 
+  #
   def initialize(options)
     self.command          = options[:command]              || nil
     self.callback         = options[:callback]             || 
@@ -19,7 +26,10 @@ class ProcessWatch
   end
 
   class << self 
-    
+  
+    #
+    # -xf => my proccesses => $1 is parent pid of watch_string match
+    # -x  => my processes  => $1 is pid of     of watch_string match
     def find(watch_string,ps_args = "")
       cmd = %%ps -x#{ps_args} |grep '#{watch_string}' |grep -v grep | grep -v 'watch #{watch_string}' | awk '{print $1}'%
       pids = %x{#{cmd}}.split()
