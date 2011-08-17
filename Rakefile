@@ -5,10 +5,10 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "hamster-the-process-watcher"
-    gem.summary = %Q{Hamster : The process runner}
-    gem.description = %Q{Dedicated to hamsters running in wheels everywhere}
-    gem.email = "github.com@robotarmyma.de"
-    gem.homepage = "http://github.com/robotarmy/hamster"
+    gem.summary = %Q{Hamster : The process Watcher}
+    gem.description = %Q{Dedicated to hamsters running in wheels everywhere -> Simple usermode process watcher - stay secure avoid root}
+    gem.email = "hampster-the-process-watcher@robotarmyma.de"
+    gem.homepage = "http://github.com/RAM9/hamster"
     gem.authors = ["Curtis Schofield"]
     gem.add_development_dependency "bundler", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
