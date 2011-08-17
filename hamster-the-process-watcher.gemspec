@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = %q{hamster-the-process-watcher}
-  s.version = "1.1.0"
+  s.version = "1.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Curtis Schofield"]
-  s.date = %q{2011-07-07}
-  s.description = %q{Dedicated to hamsters running in wheels everywhere -> Manage User mode processes in a unixy way }
-  s.email = %q{hampster-the-process-watcher@robotarmyma.de}
+  s.date = %q{2011-08-16}
+  s.description = %q{Dedicated to hamsters running in wheels everywhere}
+  s.email = %q{github.com@robotarmyma.de}
   s.executables = ["test_daemon", "hamster"]
   s.extra_rdoc_files = [
     "LICENSE",
@@ -33,10 +33,10 @@ Gem::Specification.new do |s|
     "test/helper.rb",
     "test/test_process_watch.rb"
   ]
-  s.homepage = %q{http://github.com/RAM9/hamster}
+  s.homepage = %q{http://github.com/robotarmy/hamster}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.6.1}
-  s.summary = %q{Hamster : The process Watcher}
+  s.summary = %q{Hamster : The process runner}
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
