@@ -1,13 +1,13 @@
-= Hampster
+= Hamster
 
 Simple process monitor - 
  Used to check if a process is running - if it insn't execute some ruby code
 
-see ./bin/hampster --help for all the arguments that it takes
+see ./bin/hamster --help for all the arguments that it takes
 
 = Example
 
-hampster --callback "%x{echo "Rails is Dead" | mail -s rails_is_dead me@ram9.cc}" --watch 'Rails:' --callback-message 'emailing you some fyi' --delay 1
+hamster --callback "%x{echo "Rails is Dead" | mail -s rails_is_dead me@ram9.cc}" --watch 'Rails:' --callback-message 'emailing you some fyi' --delay 1
 
 samples.  
 
