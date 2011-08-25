@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{hamster-the-process-watcher}
-  s.version = "1.1.2"
+  s.version = "1.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Curtis Schofield"]
-  s.date = %q{2011-08-16}
+  s.date = %q{2011-08-25}
   s.description = %q{Dedicated to hamsters running in wheels everywhere -> Simple usermode process watcher - stay secure avoid root}
   s.email = %q{hampster-the-process-watcher@robotarmyma.de}
   s.executables = ["test_daemon", "hamster"]
@@ -42,20 +42,20 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<wrong>, [">= 0"])
-      s.add_runtime_dependency(%q<jeweler>, [">= 0"])
       s.add_runtime_dependency(%q<daemons>, [">= 0"])
+      s.add_development_dependency(%q<wrong>, [">= 0"])
+      s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
     else
+      s.add_dependency(%q<daemons>, [">= 0"])
       s.add_dependency(%q<wrong>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
-      s.add_dependency(%q<daemons>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
     end
   else
+    s.add_dependency(%q<daemons>, [">= 0"])
     s.add_dependency(%q<wrong>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
-    s.add_dependency(%q<daemons>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
   end
 end
